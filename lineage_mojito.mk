@@ -16,6 +16,16 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Some Build Flags
 TARGET_BOOT_ANIMATION_RES := 1080
+WITH_GMS := true
+
+# extra gapps
+BUILD_GOOGLE_CONTACTS := true
+BUILD_GOOGLE_DIALER := true
+BUILD_GOOGLE_MESSAGE := true
+
+MATRIXX_CHIPSET := 678
+MATRIXX_BATTERY := 5000mah
+MATRIXX_DISPLAY := 1080x2400 
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_mojito
