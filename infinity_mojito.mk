@@ -12,23 +12,31 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/mojito/device.mk)
 
 # Inherit some LineageOS stuffs
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Some Build Flags
 TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GMS := true
 
-# extra gapps
-BUILD_GOOGLE_CONTACTS := true
-BUILD_GOOGLE_DIALER := true
-BUILD_GOOGLE_MESSAGE := true
+# Infinity build flag
+# Whether you are compiling being an OFFICIAL Maintainer:
+INFINITY_BUILD_TYPE := UNOFFICIAL
+# Maintainer Name
+INFINITY_MAINTAINER := "K4LCHAKRA"
 
-MATRIXX_CHIPSET := 678
-MATRIXX_BATTERY := 5000mah
-MATRIXX_DISPLAY := 1080x2400 
+# Whether the compiled package ships Google Apps:
+WITH_GAPPS := true
+
+# Whether the compiled shiped gapps package uses Google Dialer, Messaging, Contacts:
+TARGET_BUILD_GOOGLE_TELEPHONY := true
+
+# Whether the comiled package ships ViMusic
+TARGET_BUILD_VIMUSIC := true
+
+# Whether the compiled package ships Moto Calculator irrespective VANILLA or GAPPS:
+USE_MOTO_CALCULATOR := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_mojito
+PRODUCT_NAME := infinity_mojito
 PRODUCT_DEVICE := mojito
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 10
